@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
-import FluxoPedido from '../support/page_objects/nome-funcionliada.page'
+import loginPage from '../support/page_objects/login.page';
+import pedidoFluxoPage from '../support/page_objects/pedidoFluxo.page';
+import produtoPage from '../support/page_objects/produto.page';
+
 
 
 
@@ -15,10 +18,10 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it.only('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-       FluxoPedido.EfetuarLogin()
-       FluxoPedido.AdicionarCarrinho()
-       FluxoPedido.PreencherCheckout('Eduardo', 'Negrão', 'Litoral do Brasil', 'Rua Monsenhor Naline', '31', 'São Paulo', 'São Paulo', '04358-031', '11999871255', 'teste002@teste.com')
-       FluxoPedido.FinalizarCompra()
+      loginPage.EfetuarLogin()
+      produtoPage.AdicionarCarrinho()
+      pedidoFluxoPage.PreencherCheckout('Eduardo', 'Campesato', 'Bate Papo', 'Brasil', 'Rua Monsenhor Naline', '321', 'São Paulo', 'São Paulo', '04358-030', '11999871255', 'eduh.campesato@teste.com')
+      pedidoFluxoPage.FinalizarCompra()
     });
 
     
