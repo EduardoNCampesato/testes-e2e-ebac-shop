@@ -6,7 +6,7 @@ class dadosLogin{
         cy.get('#password').type('teste@teste.com')
         cy.get('.woocommerce-form > .button').click()
 
-        cy.get('.page-title').should('contain', 'Minha conta')
+        cy.get('.page-title').should('contain', 'Minha conta') 
     }}
 
 export default new dadosLogin
