@@ -22,6 +22,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
       produtoPage.AdicionarCarrinho()
       pedidoFluxoPage.PreencherCheckout('Eduardo', 'Campesato', 'Bate Papo', 'Brasil', 'Rua Monsenhor Naline', '321', 'São Paulo', 'São Paulo', '04358-030', '11999871255', 'eduh.campesato@teste.com')
       pedidoFluxoPage.FinalizarCompra()
+      cy.get('.woocommerce-notice').should('contain', 'Seu pedido foi recebido')
     });
 
     
