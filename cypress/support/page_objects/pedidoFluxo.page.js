@@ -1,9 +1,5 @@
 class PedidoFluxo {
 
-  
-
-    
-
     PreencherCheckout(nome, sobrenome, empresa, pais, endereco, numero, cidade, estado, cep, telefone, email) {
         
 
@@ -20,6 +16,9 @@ class PedidoFluxo {
         cy.get('#billing_postcode').clear().type(cep)
         cy.get('#billing_phone').clear().type(telefone)
         cy.get('#billing_email').clear().type(email)
+        cy.get('#terms').click()
+        cy.get('#place_order').click()
+        cy.get('.woocommerce-notice').should('contain', 'Seu pedido foi recebido')
 
 
 
@@ -29,9 +28,12 @@ class PedidoFluxo {
     FinalizarCompra() {
         cy.get('#terms').click()
         cy.get('#place_order').click()
-
         cy.get('.woocommerce-notice').should('contain', 'Seu pedido foi recebido')
+
+      
     }
+
+   
 
 
 
